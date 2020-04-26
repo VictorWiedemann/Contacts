@@ -5,12 +5,19 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Contacts.MainPage">
-
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+    <StackLayout Margin="20,10">
+        <Entry Placeholder = "Name"/>
+        <Entry Placeholder = "LastName"/>
+        <Entry Placeholder = "Email"/>
+        <Entry Placeholder = "Phone Number"/>
+        <Entry Placeholder = "Address"/>
+        <Button Text="Save"
+                Margin=" 75,0"
+                x:Name="saveButton"
+                Clicked="SaveButton_Clicked"/>
     </StackLayout>
+
+
+    
 
 </ContentPage>
