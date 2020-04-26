@@ -6,6 +6,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Android.Graphics;
+using System.IO;
 
 namespace Contacts.Droid
 {
@@ -21,7 +23,15 @@ namespace Contacts.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
+
+            //define where the SQLite information will be saved
+            string fileName = "contacts_db.db3";
+            //difference from iOS. NOTE: System.Environment, not Environment
+            string folderPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+
+            string completePath = System.IO.Path.Combine(folderPath, fileName);
+
+            LoadApplication(new App(completePath));
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

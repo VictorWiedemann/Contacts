@@ -6,11 +6,22 @@
              mc:Ignorable="d"
              x:Class="Contacts.MainPage">
     <StackLayout Margin="20,10">
-        <Entry Placeholder = "Name"/>
-        <Entry Placeholder = "LastName"/>
-        <Entry Placeholder = "Email"/>
-        <Entry Placeholder = "Phone Number"/>
-        <Entry Placeholder = "Address"/>
+        
+        <Entry x:Name="nameEntry"
+            Placeholder = "Name"/>
+        
+        <Entry x:Name="lastnameEntry"
+            Placeholder = "LastName"/>
+        
+        <Entry x:Name="emailEntry" 
+            Placeholder = "Email"/>
+        
+        <Entry x:Name="phoneNumberEntry" 
+               Placeholder = "Phone Number"/>
+        
+        <Entry x:Name="addressEntry" 
+               Placeholder = "Address"/>
+        
         <Button Text="Save"
                 Margin=" 75,0"
                 x:Name="saveButton"

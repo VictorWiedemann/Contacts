@@ -23,7 +23,14 @@ namespace Contacts.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+
+            string fileName = "contacts_db.db3";
+            //difference from iOS. NOTE: System.Environment, not Environment
+            //For iOS you need to go up one folder from personal hense the .. then go into library
+            string folderPath = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "..", "Library");
+            string completePath = System.IO.Path.Combine(folderPath, fileName);
+
+            LoadApplication(new App(completePath));
 
             return base.FinishedLaunching(app, options);
         }
