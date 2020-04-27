@@ -25,6 +25,9 @@ namespace Contacts
             Navigation.PushAsync(new MainPage());
         }
 
+        //TODO: add functionality when you click an item from the list view
+        //REF: https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/listview/interactivity
+
         //a way to see if we are going to the contacts page:
         protected override void OnAppearing()
         {
@@ -34,7 +37,9 @@ namespace Contacts
                 //if already created, the program handles this well.
                 conn.CreateTable<Contact>();
                 var contacts = conn.Table<Contact>().ToList();
-            }
+
+                contactsListView.ItemsSource = contacts;
+                }
         }
     }
 }

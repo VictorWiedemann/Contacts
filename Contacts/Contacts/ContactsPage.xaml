@@ -10,7 +10,16 @@
         <ToolbarItem Text="New"
                      Clicked="NewContactToolbarItem_Clicked"/>
     </ContentPage.ToolbarItems>
-        
 
-
+    <ContentPage.Content>
+        <ListView x:Name="contactsListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}"
+                              Detail="{Binding PhoneNumber}"
+                              TextColor="Teal"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
 </ContentPage>
